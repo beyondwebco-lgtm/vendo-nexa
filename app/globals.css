@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-navy: #071A2B;
+  --color-deep-blue: #0B2942;
+  --color-tech-blue: #176BCE;
+  --color-cyan-accent: #29B6D8;
+  --color-soft-blue-bg: #EDF6FC;
+  --color-security-green: #21B573;
+  --color-light-grey: #F5F7FA;
+  --color-border-grey: #DCE4EC;
+  --color-text-grey: #5C6875;
+  --color-dark-text: #101820;
+
+  --font-heading: var(--font-jakarta), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #101820;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
+  color: var(--color-dark-text);
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+/* Custom Grid Patterns */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 41, 66, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 41, 66, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(41, 182, 216, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 182, 216, 0.07) 1px, transparent 1px);
+}
+
+/* Glow and Glassmorphism utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 228, 236, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 41, 66, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(41, 182, 216, 0.2);
+}
+
+.security-glow {
+  box-shadow: 0 0 25px -5px rgba(33, 181, 115, 0.25);
+}
+
+.tech-glow {
+  box-shadow: 0 0 30px -5px rgba(23, 107, 206, 0.25);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 30px -5px rgba(41, 182, 216, 0.3);
+}
+
+/* Keyframe animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes dataFlow {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B0C4DE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #176BCE;
+}
