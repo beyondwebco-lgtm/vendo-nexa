@@ -2,13 +2,29 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Terms and Conditions | Vendonexa Enterprise Software",
-  description: "Vendonexa Terms & Conditions governing software usage, SLAs, and service agreements.",
+  title: "Terms & Conditions | Enterprise SLA Agreement | Vendonexa",
+  description: "Read Vendonexa's Terms and Conditions governing enterprise software platforms, SLAs, and cybersecurity services.",
+  alternates: {
+    canonical: "https://vendonexa.com/terms",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vendonexa.com" },
+    { "@type": "ListItem", position: 2, name: "Terms & Conditions", item: "https://vendonexa.com/terms" },
+  ],
 };
 
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="flex-grow pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-6">

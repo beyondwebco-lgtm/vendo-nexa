@@ -11,9 +11,36 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Cybersecurity Services | VAPT, SOC, Cloud Security & SIEM | Vendonexa",
+  title: "Cybersecurity Services | VAPT, SOC Monitoring & SIEM",
   description:
-    "Vendonexa Cybersecurity Services provide comprehensive Vulnerability Assessment & Penetration Testing (VAPT), Web/API security, SOC monitoring, SIEM integration, Cloud Security, and Incident Response.",
+    "Protect enterprise digital assets with Vendonexa VAPT services (Web, Mobile, API), SOC continuous monitoring, cloud security assessments, and incident response.",
+  keywords: [
+    "VAPT services",
+    "SOC SIEM implementation",
+    "web application security testing",
+    "cloud security assessment",
+    "incident response containment",
+  ],
+  alternates: {
+    canonical: "https://vendonexa.com/solutions/cybersecurity",
+  },
+  openGraph: {
+    title: "Cybersecurity Services | VAPT, SOC Monitoring & SIEM",
+    description: "Identify vulnerabilities and monitor threat telemetry with Vendonexa Cybersecurity Services.",
+    url: "https://vendonexa.com/solutions/cybersecurity",
+    siteName: "Vendonexa",
+    type: "website",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vendonexa.com" },
+    { "@type": "ListItem", position: 2, name: "Solutions", item: "https://vendonexa.com/solutions/cybersecurity" },
+    { "@type": "ListItem", position: 3, name: "Cybersecurity Services", item: "https://vendonexa.com/solutions/cybersecurity" },
+  ],
 };
 
 const cybersecurityCategories = [
@@ -63,17 +90,16 @@ const cybersecurityCategories = [
 export default function CybersecurityPage() {
   return (
     <div className="min-h-screen bg-[#051320] text-slate-100 flex flex-col font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="flex-grow pt-16">
         {/* Dark Hero */}
-        <section className="relative min-h-[85vh] bg-[#051320] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+        <section className="relative min-h-[85vh] bg-[#051320] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden">
           <HeroBackground variant="cybersecurity" />
-
-          <span className="corner-tick-tl">+</span>
-          <span className="corner-tick-tr">+</span>
-          <span className="corner-tick-bl">+</span>
-          <span className="corner-tick-br">+</span>
 
           <div className="relative z-10 max-w-7xl mx-auto w-full pt-4 flex items-center justify-between">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071A2B]/90 border border-[#21B573]/40 text-[#21B573] text-xs font-semibold">
@@ -89,13 +115,13 @@ export default function CybersecurityPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
             <div className="lg:col-span-8">
-              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.05] max-w-2xl">
                 Enterprise Cybersecurity & VAPT Services
               </h1>
             </div>
 
             <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
-              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 Identify vulnerabilities, reduce cyber risk, strengthen controls, monitor threats, and build a resilient zero-trust digital infrastructure.
               </p>
 
@@ -108,10 +134,10 @@ export default function CybersecurityPage() {
                 </Link>
                 <Link
                   href="#workflow"
-                  className="btn-icon-square"
+                  className="btn-secondary-outline px-4 py-3.5 rounded-lg text-xs font-semibold flex items-center gap-1.5"
                   aria-label="View Assessment Workflow"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  Workflow <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

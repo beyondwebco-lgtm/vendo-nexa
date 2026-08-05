@@ -11,9 +11,36 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Hospital Management System (HMS) | Connected Healthcare Platform | Vendonexa",
+  title: "Hospital Management System (HMS) | Healthcare EMR Software",
   description:
-    "Vendonexa Hospital Management System connects OPD/IPD clinical workflows, electronic medical records (EMR), pharmacy, lab diagnostics, billing, and ICU bed operations securely.",
+    "Digitize clinical OPD/IPD operations, electronic medical records (EMR), pharmacy, lab diagnostics, and ICU bed management with Vendonexa HMS.",
+  keywords: [
+    "hospital management system HMS",
+    "healthcare EMR software",
+    "clinical OPD IPD software",
+    "pharmacy lab management system",
+    "hospital operations software",
+  ],
+  alternates: {
+    canonical: "https://vendonexa.com/solutions/hospital-management",
+  },
+  openGraph: {
+    title: "Hospital Management System (HMS) | Healthcare EMR Software",
+    description: "Connect clinical, administrative, and financial hospital processes with Vendonexa HMS.",
+    url: "https://vendonexa.com/solutions/hospital-management",
+    siteName: "Vendonexa",
+    type: "website",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vendonexa.com" },
+    { "@type": "ListItem", position: 2, name: "Solutions", item: "https://vendonexa.com/solutions/hospital-management" },
+    { "@type": "ListItem", position: 3, name: "Hospital Management System", item: "https://vendonexa.com/solutions/hospital-management" },
+  ],
 };
 
 const hmsModules = [
@@ -41,17 +68,16 @@ const hmsModules = [
 export default function HospitalManagementPage() {
   return (
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="flex-grow pt-16">
         {/* Hero */}
-        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden">
           <HeroBackground variant="hms" />
-
-          <span className="corner-tick-tl">+</span>
-          <span className="corner-tick-tr">+</span>
-          <span className="corner-tick-bl">+</span>
-          <span className="corner-tick-br">+</span>
 
           <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2942]/90 border border-[#29B6D8]/40 text-[#29B6D8] text-xs font-semibold">
@@ -61,13 +87,13 @@ export default function HospitalManagementPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
             <div className="lg:col-span-8">
-              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.05] max-w-2xl">
                 Integrated Hospital Management System
               </h1>
             </div>
 
             <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
-              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 Connect clinical, administrative, operational, and financial hospital processes into one secure, scalable, HIPAA-aligned digital healthcare platform.
               </p>
 
@@ -80,10 +106,10 @@ export default function HospitalManagementPage() {
                 </Link>
                 <Link
                   href="#journey"
-                  className="btn-icon-square"
+                  className="btn-secondary-outline px-4 py-3.5 rounded-lg text-xs font-semibold flex items-center gap-1.5"
                   aria-label="View Patient Journey"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  Journey <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

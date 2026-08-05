@@ -26,7 +26,31 @@ import {
 export const metadata = {
   title: "Vendonexa | Enterprise Software & Cybersecurity Solutions",
   description:
-    "Vendonexa provides enterprise Vendor Management Systems, Hospital Management Systems, and Cybersecurity Services (VAPT, SOC, Cloud Security) for global enterprises.",
+    "Vendonexa is an enterprise software company and cybersecurity solutions provider. We deliver Vendor Management Systems, Hospital Management Systems (HMS), and VAPT / SOC services.",
+  keywords: [
+    "enterprise software company",
+    "cybersecurity solutions provider",
+    "vendor management system software",
+    "hospital management system HMS",
+    "VAPT services",
+    "SOC SIEM implementation",
+  ],
+  alternates: {
+    canonical: "https://vendonexa.com",
+  },
+  openGraph: {
+    title: "Vendonexa | Enterprise Software & Cybersecurity Solutions",
+    description:
+      "Technology That Manages, Connects & Protects Your Business. Manage Smarter. Operate Better. Stay Secure.",
+    url: "https://vendonexa.com",
+    siteName: "Vendonexa",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vendonexa | Enterprise Software & Cybersecurity Solutions",
+    description: "Building Smarter Systems. Securing Digital Businesses.",
+  },
 };
 
 export default function HomePage() {
@@ -36,18 +60,12 @@ export default function HomePage() {
 
       <main className="flex-grow pt-16">
         {/* =========================================================================
-            SECTION 1: HERO SECTION (Asymmetric Composition, Archivo Display H1)
+            SECTION 1: HERO SECTION
            ========================================================================= */}
-        <section className="relative min-h-[85vh] lg:min-h-[90vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+        <section className="relative min-h-[85vh] lg:min-h-[88vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden">
           <HeroBackground variant="default" />
 
-          {/* Corner Ticks */}
-          <span className="corner-tick-tl">+</span>
-          <span className="corner-tick-tr">+</span>
-          <span className="corner-tick-bl">+</span>
-          <span className="corner-tick-br">+</span>
-
-          {/* Top Badge */}
+          {/* Top Badge Container */}
           <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2942]/90 border border-[#176BCE]/40 text-xs font-semibold text-[#29B6D8]">
               <span className="w-2 h-2 rounded-full bg-[#21B573] animate-pulse" />
@@ -55,50 +73,43 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Asymmetric Composition Grid */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
-            {/* Bottom-Left Headline */}
-            <div className="lg:col-span-8">
-              <h1 className="font-display-hero text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.95] tracking-tight uppercase text-white max-w-2xl">
-                TECHNOLOGY THAT MANAGES, CONNECTS & PROTECTS
+          {/* Main Hero Container */}
+          <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto py-8">
+            {/* H1 Headline & Copy Left */}
+            <div className="lg:col-span-7 space-y-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.05] max-w-2xl">
+                Technology That Manages, Connects & Protects Your Business
               </h1>
-            </div>
 
-            {/* Bottom-Right Supporting Text & Dual CTAs */}
-            <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
-              <p className="text-sm sm:text-base text-slate-300/80 leading-relaxed font-sans">
-                Vendonexa delivers enterprise software and cybersecurity solutions designed to simplify complex operations, automate workflows, improve visibility, and protect critical digital assets.
+              <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                Vendonexa is a technology partner delivering enterprise software and cybersecurity solutions designed to simplify complex operations, automate workflows, improve visibility, and protect critical digital assets.
               </p>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                 <Link
                   href="/contact"
-                  className="btn-primary-tech px-6 py-3.5 rounded-lg text-xs font-bold shadow-lg flex-1 text-center"
+                  className="btn-primary-tech px-6 py-3.5 rounded-lg text-sm font-bold shadow-lg text-center"
                 >
                   Request a Consultation
                 </Link>
                 <Link
                   href="/solutions/vendor-management"
-                  className="btn-icon-square"
-                  aria-label="Explore Solutions"
+                  className="btn-secondary-outline px-6 py-3.5 rounded-lg text-sm font-semibold text-center flex items-center justify-center gap-2"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  Explore Our Solutions <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
-          </div>
 
-          {/* Ecosystem Interactive Visualizer */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full pt-6">
-            <EcosystemVisual />
+            {/* Ecosystem Visual Right */}
+            <div className="lg:col-span-5 w-full">
+              <EcosystemVisual />
+            </div>
           </div>
         </section>
 
-        {/* Thin Section Divider */}
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 2: ENTERPRISE TRUST STRIP (Thin Centered)
+            SECTION 2: ENTERPRISE TRUST STRIP
            ========================================================================= */}
         <section className="bg-[#0B2942] text-slate-200 py-5 border-y border-[#176BCE]/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,10 +142,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 3: THREE CORE SOLUTIONS (Centered Grid)
+            SECTION 3: THREE CORE SOLUTIONS (Equal Height Cards with Flexbox Bottom Pin)
            ========================================================================= */}
         <section className="py-20 bg-[#F5F7FA] px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -147,9 +156,9 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               {/* Card 1: Vendor Management */}
-              <div className="bg-white rounded-2xl p-8 card-interactive flex flex-col justify-between">
+              <div className="bg-white rounded-2xl p-8 card-interactive h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#EDF6FC] text-[#176BCE] flex items-center justify-center mb-6 card-icon">
                     <Building2 className="w-6 h-6" />
@@ -176,7 +185,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href="/solutions/vendor-management"
-                  className="btn-primary-tech inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs"
+                  className="btn-primary-tech inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs mt-auto"
                 >
                   <span>Explore Vendor Management</span>
                   <ArrowRight className="w-4 h-4" />
@@ -184,7 +193,7 @@ export default function HomePage() {
               </div>
 
               {/* Card 2: Hospital Management */}
-              <div className="bg-white rounded-2xl p-8 card-interactive flex flex-col justify-between">
+              <div className="bg-white rounded-2xl p-8 card-interactive h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#EDF6FC] text-[#29B6D8] flex items-center justify-center mb-6 card-icon">
                     <Stethoscope className="w-6 h-6" />
@@ -211,7 +220,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href="/solutions/hospital-management"
-                  className="btn-primary-tech inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs"
+                  className="btn-primary-tech inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs mt-auto"
                 >
                   <span>Explore Hospital Management</span>
                   <ArrowRight className="w-4 h-4" />
@@ -219,7 +228,7 @@ export default function HomePage() {
               </div>
 
               {/* Card 3: Cybersecurity Services */}
-              <div className="bg-[#071A2B] text-white rounded-2xl p-8 border border-[#21B573]/40 shadow-xl security-glow card-interactive flex flex-col justify-between">
+              <div className="bg-[#071A2B] text-white rounded-2xl p-8 border border-[#21B573]/40 shadow-xl security-glow card-interactive h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#21B573]/20 text-[#21B573] flex items-center justify-center mb-6 border border-[#21B573]/40 card-icon">
                     <ShieldCheck className="w-6 h-6" />
@@ -246,7 +255,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href="/solutions/cybersecurity"
-                  className="btn-primary-cyan inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs"
+                  className="btn-primary-cyan inline-flex items-center justify-between px-4 py-3 rounded-lg font-bold text-xs mt-auto"
                 >
                   <span>Explore Cybersecurity Services</span>
                   <ArrowRight className="w-4 h-4" />
@@ -256,10 +265,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 4: THREE-SOLUTION ECOSYSTEM DIAGRAM (Asymmetric Layout 40/60)
+            SECTION 4: THREE-SOLUTION ECOSYSTEM DIAGRAM
            ========================================================================= */}
         <section className="py-20 bg-[#071A2B] text-white px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -322,15 +329,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 5: VENDOR MANAGEMENT OVERVIEW (Asymmetric: Copy Left 45 / Mockup Right 55)
+            SECTION 5: VENDOR MANAGEMENT OVERVIEW
            ========================================================================= */}
         <section className="py-20 bg-white px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Copy Left 45% */}
               <div className="lg:col-span-5 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EDF6FC] text-[#176BCE] text-xs font-semibold">
                   Vendor Management Division
@@ -351,13 +355,12 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Pipeline & Preview Right 55% */}
               <div className="lg:col-span-7 space-y-4">
                 <div className="p-4 bg-[#F5F7FA] rounded-xl border border-[#DCE4EC]">
                   <span className="text-[11px] font-bold uppercase text-[#5C6875] block mb-2">
                     Structured Lifecycle Pipeline:
                   </span>
-                  <div className="grid grid-cols-4 gap-2 text-center text-[10px] font-semibold text-[#071A2B]">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px] font-semibold text-[#071A2B]">
                     <div className="p-2 bg-white rounded border border-[#DCE4EC]">1. Register</div>
                     <div className="p-2 bg-white rounded border border-[#DCE4EC]">2. Verify</div>
                     <div className="p-2 bg-white rounded border border-[#DCE4EC]">3. RFQ Tender</div>
@@ -367,26 +370,22 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Dashboard Mockup */}
             <VmsDashboardMockup />
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 6: HOSPITAL MANAGEMENT OVERVIEW (Mirrored: Mockup Left 55 / Copy Right 45)
+            SECTION 6: HOSPITAL MANAGEMENT OVERVIEW
            ========================================================================= */}
         <section className="py-20 bg-[#EDF6FC] px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Pipeline/Badges Left 55% */}
               <div className="lg:col-span-7 order-2 lg:order-1">
                 <div className="p-4 bg-white rounded-xl border border-[#DCE4EC]">
                   <span className="text-[11px] font-bold uppercase text-[#29B6D8] block mb-2">
                     Digital Patient Care Journey:
                   </span>
-                  <div className="grid grid-cols-4 gap-2 text-center text-[10px] font-semibold text-[#071A2B]">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px] font-semibold text-[#071A2B]">
                     <div className="p-2 bg-[#EDF6FC] rounded border border-[#DCE4EC]">1. Intake</div>
                     <div className="p-2 bg-[#EDF6FC] rounded border border-[#DCE4EC]">2. EMR Consult</div>
                     <div className="p-2 bg-[#EDF6FC] rounded border border-[#DCE4EC]">3. Lab/Rx</div>
@@ -395,7 +394,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Copy Right 45% */}
               <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#29B6D8] border border-[#29B6D8]/30 text-xs font-semibold">
                   Healthcare Division
@@ -417,12 +415,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Dashboard Mockup */}
             <HmsDashboardMockup />
           </div>
         </section>
-
-        <hr className="border-t border-[#DCE4EC]/60" />
 
         {/* =========================================================================
             SECTION 7: CYBERSECURITY SERVICES OVERVIEW
@@ -441,7 +436,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* 6 Capabilities Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { step: "1. Assess", items: ["VAPT Testing (Web, Mobile, API)", "Network Vulnerability Scanning", "Cloud Infrastructure Assessment"] },
@@ -464,7 +458,6 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Security Dashboard */}
             <SecurityDashboardMockup />
 
             <div className="text-center">
@@ -477,8 +470,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <hr className="border-t border-[#DCE4EC]/60" />
 
         {/* =========================================================================
             SECTION 8: CUSTOM SOFTWARE DEVELOPMENT
@@ -530,8 +521,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
             SECTION 9: INTEGRATION SERVICES
            ========================================================================= */}
@@ -541,10 +530,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 10: WHY VENDONEXA (Centered Grid)
+            SECTION 10: WHY VENDONEXA
            ========================================================================= */}
         <section className="py-20 bg-[#F5F7FA] px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -557,7 +544,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: "Client-Centric Solutions", desc: "Technology designed around real operational requirements." },
                 { title: "Security-First Approach", desc: "Security considered throughout design, development, deployment, and ongoing operations." },
@@ -580,10 +567,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 11: IMPLEMENTATION PROCESS (Horizontal connected timeline)
+            SECTION 11: IMPLEMENTATION PROCESS
            ========================================================================= */}
         <section className="py-20 bg-white px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -625,8 +610,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
             SECTION 12: INDUSTRIES SERVED
            ========================================================================= */}
@@ -636,17 +619,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <hr className="border-t border-[#DCE4EC]/60" />
-
         {/* =========================================================================
-            SECTION 13: FINAL BRAND STATEMENT BANNER (Corner Ticks)
+            SECTION 13: FINAL BRAND STATEMENT BANNER
            ========================================================================= */}
-        <section className="py-20 bg-[#0B2942] text-white px-4 sm:px-6 lg:px-8 text-center relative corner-ticks">
-          <span className="corner-tick-tl">+</span>
-          <span className="corner-tick-tr">+</span>
-          <span className="corner-tick-bl">+</span>
-          <span className="corner-tick-br">+</span>
-
+        <section className="py-20 bg-[#0B2942] text-white px-4 sm:px-6 lg:px-8 text-center relative">
           <div className="max-w-4xl mx-auto space-y-6 relative z-10">
             <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               Manage Smarter. Operate Better. Stay Secure.
@@ -663,10 +639,9 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/about"
-                className="btn-icon-square"
-                aria-label="Explore Vendonexa"
+                className="btn-secondary-outline px-6 py-3.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-2"
               >
-                <ArrowRight className="w-4 h-4" />
+                Explore Vendonexa <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

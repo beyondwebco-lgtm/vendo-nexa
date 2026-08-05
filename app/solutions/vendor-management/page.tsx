@@ -11,9 +11,36 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Vendor Management System (VMS) | Enterprise Procurement Platform | Vendonexa",
+  title: "Vendor Management System (VMS) | Enterprise Procurement Software",
   description:
-    "Vendonexa Vendor Management System simplifies the complete vendor lifecycle, from registration, RFQ/RFP procurement, contract management, and invoice tracking to risk and performance analytics.",
+    "Automate vendor onboarding, RFQ/RFP tenders, contracts, 3-way invoice matching, and supplier risk index with Vendonexa Vendor Management System.",
+  keywords: [
+    "vendor management system software",
+    "enterprise procurement software",
+    "vendor onboarding platform",
+    "RFQ tender management",
+    "contract lifecycle management",
+  ],
+  alternates: {
+    canonical: "https://vendonexa.com/solutions/vendor-management",
+  },
+  openGraph: {
+    title: "Vendor Management System (VMS) | Enterprise Procurement Software",
+    description: "Simplify the complete vendor lifecycle with Vendonexa VMS.",
+    url: "https://vendonexa.com/solutions/vendor-management",
+    siteName: "Vendonexa",
+    type: "website",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vendonexa.com" },
+    { "@type": "ListItem", position: 2, name: "Solutions", item: "https://vendonexa.com/solutions/vendor-management" },
+    { "@type": "ListItem", position: 3, name: "Vendor Management System", item: "https://vendonexa.com/solutions/vendor-management" },
+  ],
 };
 
 const vmsModuleCategories = [
@@ -68,17 +95,16 @@ const vmsModuleCategories = [
 export default function VendorManagementPage() {
   return (
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="flex-grow pt-16">
         {/* Page Hero */}
-        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden">
           <HeroBackground variant="vms" />
-
-          <span className="corner-tick-tl">+</span>
-          <span className="corner-tick-tr">+</span>
-          <span className="corner-tick-bl">+</span>
-          <span className="corner-tick-br">+</span>
 
           <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2942]/90 border border-[#176BCE]/40 text-[#29B6D8] text-xs font-semibold">
@@ -88,13 +114,13 @@ export default function VendorManagementPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
             <div className="lg:col-span-8">
-              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.05] max-w-2xl">
                 Enterprise Vendor Management System
               </h1>
             </div>
 
             <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
-              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 Centralize supplier onboarding, RFQ tenders, contract lifecycle, invoice 3-way matching, compliance audits, and performance tracking across your enterprise.
               </p>
 
@@ -107,10 +133,10 @@ export default function VendorManagementPage() {
                 </Link>
                 <Link
                   href="#modules"
-                  className="btn-icon-square"
+                  className="btn-secondary-outline px-4 py-3.5 rounded-lg text-xs font-semibold flex items-center gap-1.5"
                   aria-label="Explore Modules"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  Modules <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

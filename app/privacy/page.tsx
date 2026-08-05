@@ -2,13 +2,29 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Privacy Policy | Vendonexa Data Protection",
-  description: "Vendonexa Privacy Policy details our enterprise data handling, encryption protocols, and user privacy practices.",
+  title: "Privacy Policy | Enterprise Data Protection | Vendonexa",
+  description: "Read Vendonexa's Privacy Policy regarding enterprise data encryption, zero data-sale commitment, and security compliance.",
+  alternates: {
+    canonical: "https://vendonexa.com/privacy",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://vendonexa.com" },
+    { "@type": "ListItem", position: 2, name: "Privacy Policy", item: "https://vendonexa.com/privacy" },
+  ],
 };
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="flex-grow pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-6">
