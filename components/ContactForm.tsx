@@ -12,8 +12,6 @@ import {
   Mail,
   Phone,
   User,
-  Briefcase,
-  Layers,
 } from "lucide-react";
 
 interface FormInputs {
@@ -47,7 +45,6 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
 
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
-    // Simulate API call to backend / CRM endpoint
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     setIsSuccess(true);
@@ -55,38 +52,38 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
   };
 
   return (
-    <div className="bg-[#071A2B] rounded-2xl border border-[#176BCE]/30 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+    <div className="bg-[#1C1815] rounded-2xl border border-[#C2704A]/30 p-6 sm:p-8 shadow-2xl relative overflow-hidden text-[#FAF6F0]">
       {/* Background Accent */}
-      <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#176BCE]/15 rounded-full filter blur-3xl" />
+      <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#C2704A]/15 rounded-full filter blur-3xl" />
 
       <div className="relative z-10">
         <div className="mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#176BCE]/20 border border-[#176BCE]/40 text-xs font-semibold text-[#29B6D8] mb-2">
-            <ShieldCheck className="w-4 h-4 text-[#21B573]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#26211D] border border-[#C2704A]/40 text-xs font-semibold text-[#F0E6D8] mb-2">
+            <ShieldCheck className="w-4 h-4 text-[#5C6B5D]" />
             Enterprise Executive Consultation
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
             Schedule a Confidential Consultation
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1">
+          <p className="text-xs sm:text-sm text-[#F0E6D8]/80 mt-1">
             Discuss your operational objectives, system integration needs, or cybersecurity assessment with our technical specialists.
           </p>
         </div>
 
         {isSuccess ? (
-          <div className="bg-[#0B2942]/80 border border-[#21B573]/50 rounded-xl p-6 text-center space-y-4 animate-in fade-in duration-300">
-            <div className="w-12 h-12 rounded-full bg-[#21B573]/20 text-[#21B573] flex items-center justify-center mx-auto border border-[#21B573]/40">
+          <div className="bg-[#26211D]/80 border border-[#5C6B5D]/50 rounded-xl p-6 text-center space-y-4 animate-in fade-in duration-300">
+            <div className="w-12 h-12 rounded-full bg-[#5C6B5D]/20 text-[#5C6B5D] flex items-center justify-center mx-auto border border-[#5C6B5D]/40">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <h4 className="text-lg font-bold text-white font-heading">
               Consultation Request Received
             </h4>
-            <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+            <p className="text-xs text-[#F0E6D8]/80 max-w-md mx-auto leading-relaxed">
               Thank you for reaching out to Vendonexa. One of our enterprise solution architects will contact you within 4 business hours to discuss your project requirements.
             </p>
             <button
               onClick={() => setIsSuccess(false)}
-              className="px-4 py-2 bg-[#176BCE] hover:bg-[#29B6D8] text-white text-xs font-semibold rounded-lg transition-colors"
+              className="px-4 py-2 bg-[#C2704A] hover:bg-[#8B5E3C] text-white text-xs font-semibold rounded-lg transition-colors"
             >
               Submit Another Request
             </button>
@@ -96,16 +93,16 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Full Name */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Full Name <span className="text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <User className="w-4 h-4 text-[#F0E6D8]/40 absolute left-3 top-3" />
                   <input
                     type="text"
                     {...register("fullName", { required: "Full name is required" })}
                     placeholder="e.g. Sarah Jenkins"
-                    className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#29B6D8]"
+                    className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-[#F0E6D8]/40 focus:outline-none focus:border-[#C2704A]"
                   />
                 </div>
                 {errors.fullName && (
@@ -117,11 +114,11 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
 
               {/* Business Email */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Business Email <span className="text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Mail className="w-4 h-4 text-[#F0E6D8]/40 absolute left-3 top-3" />
                   <input
                     type="email"
                     {...register("businessEmail", {
@@ -132,7 +129,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
                       },
                     })}
                     placeholder="sarah@enterprise.com"
-                    className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#29B6D8]"
+                    className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-[#F0E6D8]/40 focus:outline-none focus:border-[#C2704A]"
                   />
                 </div>
                 {errors.businessEmail && (
@@ -146,16 +143,16 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Phone Number */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Phone Number <span className="text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Phone className="w-4 h-4 text-[#F0E6D8]/40 absolute left-3 top-3" />
                   <input
                     type="tel"
                     {...register("phoneNumber", { required: "Phone number is required" })}
                     placeholder="+1 (555) 000-0000"
-                    className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#29B6D8]"
+                    className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-[#F0E6D8]/40 focus:outline-none focus:border-[#C2704A]"
                   />
                 </div>
                 {errors.phoneNumber && (
@@ -167,16 +164,16 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
 
               {/* Company Name */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Company / Organization Name <span className="text-rose-400">*</span>
                 </label>
                 <div className="relative">
-                  <Building2 className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Building2 className="w-4 h-4 text-[#F0E6D8]/40 absolute left-3 top-3" />
                   <input
                     type="text"
                     {...register("companyName", { required: "Company name is required" })}
                     placeholder="e.g. Apex Health Systems"
-                    className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#29B6D8]"
+                    className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-[#F0E6D8]/40 focus:outline-none focus:border-[#C2704A]"
                   />
                 </div>
                 {errors.companyName && (
@@ -190,12 +187,12 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Interested Solution */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Interested Solution <span className="text-rose-400">*</span>
                 </label>
                 <select
                   {...register("interestedSolution", { required: true })}
-                  className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#29B6D8]"
+                  className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C2704A]"
                 >
                   <option value="Vendor Management System">
                     Vendor Management System (VMS)
@@ -218,12 +215,12 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
 
               {/* Organization Size */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                   Organization Size
                 </label>
                 <select
                   {...register("organizationSize")}
-                  className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#29B6D8]"
+                  className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C2704A]"
                 >
                   <option value="1-50 Employees">1 - 50 Employees</option>
                   <option value="50-250 Employees">50 - 250 Employees</option>
@@ -235,7 +232,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
 
             {/* Project Requirement */}
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1">
+              <label className="block text-xs font-semibold text-[#F0E6D8] mb-1">
                 Project Requirement Details <span className="text-rose-400">*</span>
               </label>
               <textarea
@@ -244,7 +241,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
                   required: "Please describe your project objective",
                 })}
                 placeholder="Briefly describe your current technical setup, key challenges, or security objectives..."
-                className="w-full bg-[#0B2942] border border-[#176BCE]/30 rounded-lg p-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#29B6D8]"
+                className="w-full bg-[#26211D] border border-[#C2704A]/30 rounded-lg p-3 text-xs text-white placeholder-[#F0E6D8]/40 focus:outline-none focus:border-[#C2704A]"
               />
               {errors.projectRequirement && (
                 <p className="text-[11px] text-rose-400 mt-1">
@@ -256,16 +253,16 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
             {/* Preferred Contact Method */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <div>
-                <span className="text-xs font-semibold text-slate-300 block mb-1">
+                <span className="text-xs font-semibold text-[#F0E6D8] block mb-1">
                   Preferred Contact Method:
                 </span>
-                <div className="flex gap-4 text-xs text-slate-300">
+                <div className="flex gap-4 text-xs text-[#F0E6D8]/80">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
                       type="radio"
                       value="Email"
                       {...register("preferredContact")}
-                      className="text-[#176BCE]"
+                      className="text-[#C2704A]"
                     />
                     Email
                   </label>
@@ -274,7 +271,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
                       type="radio"
                       value="Phone"
                       {...register("preferredContact")}
-                      className="text-[#176BCE]"
+                      className="text-[#C2704A]"
                     />
                     Phone Call
                   </label>
@@ -283,7 +280,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
                       type="radio"
                       value="Video Call"
                       {...register("preferredContact")}
-                      className="text-[#176BCE]"
+                      className="text-[#C2704A]"
                     />
                     Video Demo
                   </label>
@@ -293,7 +290,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#176BCE] to-[#29B6D8] text-white text-xs font-bold shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#C2704A] hover:bg-[#8B5E3C] text-white text-xs font-bold shadow-lg transition-all disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>

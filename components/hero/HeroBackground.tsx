@@ -13,7 +13,6 @@ export default function HeroBackground({ variant = "default" }: HeroBackgroundPr
   const [enableCursorGlow, setEnableCursorGlow] = useState(false);
 
   useEffect(() => {
-    // Only enable cursor glow for cybersecurity variant if not reduced motion / touch
     if (variant === "cybersecurity") {
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
@@ -42,45 +41,45 @@ export default function HeroBackground({ variant = "default" }: HeroBackgroundPr
       onMouseLeave={() => setIsHovered(false)}
       className="absolute inset-0 overflow-hidden pointer-events-auto"
     >
-      {/* Dark Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#071A2B] via-[#0B2942] to-[#071A2B]" />
+      {/* Dark Warm Base Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1C1815] via-[#26211D] to-[#1C1815]" />
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-grid-pattern-dark opacity-15" />
 
       {/* SVG Network Line Mesh */}
-      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full opacity-25 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#176BCE" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#29B6D8" stopOpacity="0.1" />
+          <linearGradient id="lineGradWarm" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C2704A" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#5C6B5D" stopOpacity="0.2" />
           </linearGradient>
         </defs>
         <path
           d="M -100 200 L 400 -50 L 900 300 L 1400 100"
-          stroke="url(#lineGrad)"
+          stroke="url(#lineGradWarm)"
           strokeWidth="1.5"
           fill="none"
         />
         <path
           d="M 100 600 L 600 250 L 1100 500"
-          stroke="url(#lineGrad)"
+          stroke="url(#lineGradWarm)"
           strokeWidth="1"
           fill="none"
         />
-        <circle cx="400" cy="-50" r="3" fill="#29B6D8" className="animate-ping" />
-        <circle cx="900" cy="300" r="3" fill="#21B573" className="animate-ping" />
+        <circle cx="400" cy="-50" r="3" fill="#C2704A" className="animate-ping" />
+        <circle cx="900" cy="300" r="3" fill="#5C6B5D" className="animate-ping" />
       </svg>
 
       {/* Variant Accent Glows */}
       {variant === "vms" && (
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#176BCE]/20 rounded-full filter blur-3xl" />
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#C2704A]/15 rounded-full filter blur-3xl" />
       )}
       {variant === "hms" && (
-        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#29B6D8]/20 rounded-full filter blur-3xl" />
+        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#8B5E3C]/15 rounded-full filter blur-3xl" />
       )}
       {variant === "cybersecurity" && (
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-[#21B573]/15 rounded-full filter blur-3xl" />
+        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-[#5C6B5D]/20 rounded-full filter blur-3xl" />
       )}
 
       {/* Cursor Following Glow (Cybersecurity variant) */}
@@ -88,7 +87,7 @@ export default function HeroBackground({ variant = "default" }: HeroBackgroundPr
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-300"
           style={{
-            background: `radial-gradient(600px circle at ${mousePos.x}% ${mousePos.y}%, rgba(33, 181, 115, 0.08), transparent 70%)`,
+            background: `radial-gradient(600px circle at ${mousePos.x}% ${mousePos.y}%, rgba(194, 112, 74, 0.1), transparent 70%)`,
           }}
         />
       )}

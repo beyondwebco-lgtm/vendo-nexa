@@ -1,187 +1,121 @@
 "use me";
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Building2,
   Stethoscope,
   ShieldCheck,
-  Activity,
   CheckCircle2,
   Lock,
-  ArrowUpRight,
-  TrendingUp,
-  Server,
-  Zap,
 } from "lucide-react";
 
 export default function EcosystemVisual() {
   return (
-    <div className="relative w-full max-w-5xl mx-auto p-4 sm:p-6 rounded-2xl bg-gradient-to-b from-[#0B2942]/90 to-[#071A2B]/95 border border-[#176BCE]/30 shadow-2xl overflow-hidden backdrop-blur-xl">
-      {/* Background Glows & Grid */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-15 pointer-events-none" />
-      <div className="absolute -top-24 -left-24 w-60 h-60 bg-[#176BCE]/25 rounded-full filter blur-3xl" />
-      <div className="absolute -bottom-24 -right-24 w-60 h-60 bg-[#29B6D8]/20 rounded-full filter blur-3xl" />
+    <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#C2704A]/20 via-transparent to-[#5C6B5D]/20 rounded-2xl filter blur-2xl" />
 
-      {/* Top Header Bar of Mockup */}
-      <div className="relative z-10 flex items-center justify-between pb-4 mb-6 border-b border-[#176BCE]/20 text-xs">
-        <div className="flex items-center gap-2">
-          <div className="flex gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+      {/* Main Glass Container */}
+      <div className="relative bg-[#26211D]/90 backdrop-blur-xl border border-[#C2704A]/30 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+        {/* Top Header Strip */}
+        <div className="flex items-center justify-between border-b border-[#C2704A]/20 pb-4">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#C2704A]" />
+            <div className="w-3 h-3 rounded-full bg-[#8B5E3C]" />
+            <div className="w-3 h-3 rounded-full bg-[#5C6B5D]" />
           </div>
-          <span className="text-slate-400 font-mono text-[11px] ml-2">
-            vendonexa://enterprise-ecosystem.core
+          <span className="text-[11px] font-mono text-[#F0E6D8]/60 uppercase tracking-widest">
+            VENDONEXA CORE OS v4.2
           </span>
         </div>
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 text-[#21B573] font-medium bg-[#21B573]/10 px-2.5 py-0.5 rounded-full border border-[#21B573]/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#21B573] animate-ping" />
-            Security Active: Zero Trust
-          </span>
-          <span className="text-slate-400 font-mono text-[11px] hidden sm:inline">
-            Status: 99.99% Uptime
-          </span>
-        </div>
-      </div>
 
-      {/* 3 Core Platform Nodes Grid */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Node 1: Vendor Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-[#071A2B]/80 rounded-xl p-4 border border-[#176BCE]/30 hover:border-[#176BCE] transition-all group"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-[#176BCE]/20 text-[#29B6D8] border border-[#176BCE]/40">
+        {/* 3 Interconnected Pillars */}
+        <div className="space-y-3">
+          {/* Pillar 1: VMS */}
+          <div className="bg-[#1C1815] p-4 rounded-xl border border-[#C2704A]/30 flex items-center justify-between hover:border-[#C2704A] transition-colors group">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-[#C2704A]/20 text-[#C2704A] border border-[#C2704A]/40">
                 <Building2 className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-sm font-heading">
-                  Vendor Management
+                <h4 className="text-xs font-bold text-[#FAF6F0] font-heading group-hover:text-[#C2704A] transition-colors">
+                  Vendor Management System
                 </h4>
-                <p className="text-[10px] text-slate-400">Enterprise Procurement</p>
+                <p className="text-[11px] text-[#F0E6D8]/70">
+                  Onboarding • Procurement • Contracts • 3-Way Matching
+                </p>
               </div>
             </div>
-            <span className="text-[10px] bg-[#176BCE]/20 text-[#29B6D8] px-2 py-0.5 rounded font-mono">
-              VMS v4.2
+            <span className="text-[10px] font-mono px-2 py-1 rounded bg-[#C2704A]/20 text-[#C2704A] border border-[#C2704A]/30">
+              ACTIVE
             </span>
           </div>
 
-          <div className="space-y-2 mt-3 text-xs">
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">Active Vendors</span>
-              <span className="font-mono font-bold text-white">1,482</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">Pending RFQs</span>
-              <span className="font-mono font-bold text-[#29B6D8]">18 Live</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">Contract Compliance</span>
-              <span className="font-mono font-bold text-[#21B573]">98.6%</span>
-            </div>
+          {/* Connection Line */}
+          <div className="flex items-center justify-center -my-1">
+            <div className="w-0.5 h-3 bg-gradient-to-b from-[#C2704A] to-[#5C6B5D]" />
           </div>
-        </motion.div>
 
-        {/* Node 2: Hospital Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-[#071A2B]/80 rounded-xl p-4 border border-[#176BCE]/30 hover:border-[#29B6D8] transition-all group"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-[#29B6D8]/20 text-[#29B6D8] border border-[#29B6D8]/40">
+          {/* Pillar 2: HMS */}
+          <div className="bg-[#1C1815] p-4 rounded-xl border border-[#C2704A]/30 flex items-center justify-between hover:border-[#C2704A] transition-colors group">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-[#C2704A]/20 text-[#C2704A] border border-[#C2704A]/40">
                 <Stethoscope className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-sm font-heading">
-                  Hospital Management
+                <h4 className="text-xs font-bold text-[#FAF6F0] font-heading group-hover:text-[#C2704A] transition-colors">
+                  Hospital Management System
                 </h4>
-                <p className="text-[10px] text-slate-400">Clinical & Operations</p>
+                <p className="text-[11px] text-[#F0E6D8]/70">
+                  Patient EMR • OPD/IPD • Diagnostics • Billing Sync
+                </p>
               </div>
             </div>
-            <span className="text-[10px] bg-[#29B6D8]/20 text-[#29B6D8] px-2 py-0.5 rounded font-mono">
-              HMS Core
+            <span className="text-[10px] font-mono px-2 py-1 rounded bg-[#C2704A]/20 text-[#C2704A] border border-[#C2704A]/30">
+              CONNECTED
             </span>
           </div>
 
-          <div className="space-y-2 mt-3 text-xs">
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">Today's OPD Count</span>
-              <span className="font-mono font-bold text-white">412 Patients</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">Bed Occupancy</span>
-              <span className="font-mono font-bold text-[#29B6D8]">84% (IPD)</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#176BCE]/10">
-              <span className="text-slate-300 text-[11px]">EMR Sync & Security</span>
-              <span className="font-mono font-bold text-[#21B573]">Encrypted</span>
-            </div>
+          {/* Connection Line */}
+          <div className="flex items-center justify-center -my-1">
+            <div className="w-0.5 h-3 bg-gradient-to-b from-[#C2704A] to-[#5C6B5D]" />
           </div>
-        </motion.div>
 
-        {/* Node 3: Cybersecurity */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-[#071A2B]/80 rounded-xl p-4 border border-[#21B573]/40 hover:border-[#21B573] transition-all group"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-[#21B573]/20 text-[#21B573] border border-[#21B573]/40">
+          {/* Pillar 3: Cybersecurity */}
+          <div className="bg-[#1C1815] p-4 rounded-xl border border-[#5C6B5D]/40 flex items-center justify-between hover:border-[#5C6B5D] transition-colors group security-glow">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-[#5C6B5D]/20 text-[#5C6B5D] border border-[#5C6B5D]/40">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-sm font-heading">
-                  Cybersecurity Services
+                <h4 className="text-xs font-bold text-[#FAF6F0] font-heading group-hover:text-[#5C6B5D] transition-colors">
+                  Cybersecurity Operations
                 </h4>
-                <p className="text-[10px] text-slate-400">SOC & Threat Defense</p>
+                <p className="text-[11px] text-[#F0E6D8]/70">
+                  VAPT Testing • SOC SIEM • Zero-Trust • AES-256
+                </p>
               </div>
             </div>
-            <span className="text-[10px] bg-[#21B573]/20 text-[#21B573] px-2 py-0.5 rounded font-mono">
-              SIEM Monitored
+            <span className="text-[10px] font-mono px-2 py-1 rounded bg-[#5C6B5D]/20 text-[#5C6B5D] border border-[#5C6B5D]/30 flex items-center gap-1">
+              <Lock className="w-3 h-3" /> SECURED
             </span>
           </div>
-
-          <div className="space-y-2 mt-3 text-xs">
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#21B573]/10">
-              <span className="text-slate-300 text-[11px]">Threat Posture</span>
-              <span className="font-mono font-bold text-[#21B573]">Secure (0 Critical)</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#21B573]/10">
-              <span className="text-slate-300 text-[11px]">VAPT Status</span>
-              <span className="font-mono font-bold text-[#29B6D8]">Passed & Verified</span>
-            </div>
-            <div className="flex justify-between items-center bg-[#0B2942]/60 p-2 rounded border border-[#21B573]/10">
-              <span className="text-slate-300 text-[11px]">Endpoint Protection</span>
-              <span className="font-mono font-bold text-[#21B573]">100% Covered</span>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Central Connectivity Bar */}
-      <div className="relative z-10 mt-6 pt-4 border-t border-[#176BCE]/20 flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#0B2942]/40 p-3 rounded-xl border border-[#176BCE]/15">
-        <div className="flex items-center gap-3">
-          <div className="p-1.5 rounded-md bg-[#176BCE]/20 text-[#29B6D8]">
-            <Zap className="w-4 h-4" />
-          </div>
-          <span className="text-xs text-slate-200 font-medium">
-            Central Integration Bus: ERP, CRM, Cloud Infrastructure & Data Pipelines
-          </span>
         </div>
-        <div className="flex items-center gap-2 text-[11px] text-[#29B6D8] font-mono">
-          <span className="w-2 h-2 rounded-full bg-[#29B6D8] animate-pulse" />
-          Connected & Synchronized
+
+        {/* Footer Metrics Strip */}
+        <div className="pt-2 border-t border-[#C2704A]/20 grid grid-cols-3 gap-2 text-center">
+          <div className="bg-[#1C1815]/60 p-2 rounded-lg border border-[#C2704A]/20">
+            <span className="text-[10px] text-[#F0E6D8]/60 block font-mono">UPTIME</span>
+            <span className="text-xs font-bold text-[#5C6B5D] font-mono">99.99%</span>
+          </div>
+          <div className="bg-[#1C1815]/60 p-2 rounded-lg border border-[#C2704A]/20">
+            <span className="text-[10px] text-[#F0E6D8]/60 block font-mono">VAPT STATUS</span>
+            <span className="text-xs font-bold text-[#5C6B5D] font-mono">PASSED</span>
+          </div>
+          <div className="bg-[#1C1815]/60 p-2 rounded-lg border border-[#C2704A]/20">
+            <span className="text-[10px] text-[#F0E6D8]/60 block font-mono">ENCRYPTION</span>
+            <span className="text-xs font-bold text-[#C2704A] font-mono">AES-256</span>
+          </div>
         </div>
       </div>
     </div>

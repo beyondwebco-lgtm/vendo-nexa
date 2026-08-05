@@ -1,16 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-navy: #071A2B;
-  --color-deep-blue: #0B2942;
-  --color-tech-blue: #176BCE;
-  --color-cyan-accent: #29B6D8;
-  --color-soft-blue-bg: #EDF6FC;
-  --color-security-green: #21B573;
-  --color-light-grey: #F5F7FA;
-  --color-border-grey: #DCE4EC;
-  --color-text-grey: #5C6875;
-  --color-dark-text: #101820;
+  --color-warm-cream: #FAF6F0;
+  --color-warm-sand: #F0E6D8;
+  --color-clay: #C2704A;
+  --color-deep-clay: #8B5E3C;
+  --color-warm-charcoal: #2B2622;
+  --color-sage: #5C6B5D;
+  --color-dark-bg: #1C1815;
+  --color-dark-surface: #26211D;
 
   --font-display: var(--font-archivo-display), sans-serif;
   --font-heading: var(--font-jakarta), sans-serif;
@@ -18,15 +16,15 @@
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #101820;
+  --background: #FAF6F0;
+  --foreground: #2B2622;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-inter), sans-serif;
-  color: var(--color-dark-text);
-  background-color: var(--background);
+  color: #2B2622;
+  background-color: #FAF6F0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,97 +38,107 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
-/* Custom Grid Patterns */
+/* Custom Grid Patterns for Warm Theme */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(11, 41, 66, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 41, 66, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(43, 38, 34, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 38, 34, 0.05) 1px, transparent 1px);
 }
 
 .bg-grid-pattern-dark {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(41, 182, 216, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(41, 182, 216, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(194, 112, 74, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 112, 74, 0.08) 1px, transparent 1px);
 }
 
 /* Glassmorphism utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(250, 246, 240, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(220, 228, 236, 0.8);
+  border: 1px solid rgba(240, 230, 216, 0.9);
 }
 
 .glass-panel-dark {
-  background: rgba(11, 41, 66, 0.75);
+  background: rgba(38, 33, 29, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(41, 182, 216, 0.2);
+  border: 1px solid rgba(194, 112, 74, 0.25);
 }
 
-.security-glow {
-  box-shadow: 0 0 25px -5px rgba(33, 181, 115, 0.25);
+.clay-glow {
+  box-shadow: 0 0 30px -5px rgba(194, 112, 74, 0.3);
 }
 
-.tech-glow {
-  box-shadow: 0 0 30px -5px rgba(23, 107, 206, 0.25);
-}
-
-.cyan-glow {
-  box-shadow: 0 0 30px -5px rgba(41, 182, 216, 0.3);
+.sage-glow {
+  box-shadow: 0 0 25px -5px rgba(92, 107, 93, 0.25);
 }
 
 /* Buttons */
-.btn-primary-tech {
-  background-color: #176BCE;
+.btn-primary-clay, .btn-primary-tech {
+  background-color: #C2704A;
   color: #FFFFFF;
   font-weight: 700;
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn-primary-tech:hover {
+.btn-primary-clay:hover, .btn-primary-tech:hover {
+  background-color: #8B5E3C;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(23, 107, 206, 0.3);
+  box-shadow: 0 8px 20px rgba(194, 112, 74, 0.3);
 }
-.btn-primary-tech:active {
+.btn-primary-clay:active, .btn-primary-tech:active {
   transform: translateY(0);
   box-shadow: none;
 }
-.btn-primary-tech:focus-visible {
-  outline: 2px solid #29B6D8;
+.btn-primary-clay:focus-visible, .btn-primary-tech:focus-visible {
+  outline: 2px solid #C2704A;
   outline-offset: 2px;
 }
 
 .btn-primary-cyan {
-  background-color: #29B6D8;
-  color: #071A2B;
+  background-color: #C2704A;
+  color: #FFFFFF;
   font-weight: 700;
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-primary-cyan:hover {
+  background-color: #8B5E3C;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(41, 182, 216, 0.35);
-}
-.btn-primary-cyan:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-.btn-primary-cyan:focus-visible {
-  outline: 2px solid #21B573;
-  outline-offset: 2px;
+  box-shadow: 0 8px 20px rgba(194, 112, 74, 0.35);
 }
 
 .btn-secondary-outline {
   background: transparent;
-  border: 1px solid rgba(220, 228, 236, 0.4);
-  color: #FFFFFF;
+  border: 1px solid rgba(240, 230, 216, 0.4);
+  color: #FAF6F0;
   font-weight: 600;
   transition: all 200ms ease;
 }
 .btn-secondary-outline:hover {
-  background-color: rgba(23, 107, 206, 0.15);
-  border-color: #176BCE;
+  background-color: rgba(194, 112, 74, 0.15);
+  border-color: #C2704A;
+}
+
+.btn-icon-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(240, 230, 216, 0.3);
+  background: transparent;
+  border-radius: 8px;
+  color: #FAF6F0;
+  transition: all 200ms ease;
+}
+.btn-icon-square:hover {
+  background-color: rgba(194, 112, 74, 0.15);
+  border-color: #C2704A;
+}
+.btn-icon-square:hover svg {
+  transform: translateX(3px);
 }
 
 /* Nav Underline animation */
@@ -144,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #29B6D8;
+  background-color: #C2704A;
   transition: width 200ms ease;
 }
 .nav-link-underline:hover::after,
@@ -154,14 +162,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Card Hover Specification */
 .card-interactive {
-  border: 1px solid #DCE4EC;
-  box-shadow: 0 1px 2px rgba(16, 24, 32, 0.04);
+  border: 1px solid #F0E6D8;
+  box-shadow: 0 1px 3px rgba(43, 38, 34, 0.04);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms ease;
 }
 .card-interactive:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(16, 24, 32, 0.08);
-  border-color: rgba(23, 107, 206, 0.4);
+  box-shadow: 0 16px 32px rgba(43, 38, 34, 0.08);
+  border-color: rgba(194, 112, 74, 0.4);
 }
 .card-interactive:hover .card-icon {
   transform: scale(1.08);
@@ -171,15 +179,23 @@ h1, h2, h3, h4, h5, h6 {
   transform-origin: center;
 }
 
-/* Skeleton Shimmer Loading */
-.skeleton-shimmer {
-  background: linear-gradient(90deg, rgba(11,41,66,0.4) 0%, rgba(23,107,206,0.15) 50%, rgba(11,41,66,0.4) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8C8B8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C2704A;
 }
 
 @media (prefers-reduced-motion: reduce) {
