@@ -4,25 +4,22 @@
 import {
   Stethoscope,
   Users,
-  Activity,
   Bed,
   FileText,
   Pill,
-  DollarSign,
-  AlertCircle,
-  Clock,
-  Heart,
   TrendingUp,
   ShieldAlert,
+  AlertCircle,
 } from "lucide-react";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function HmsDashboardMockup() {
   return (
-    <div className="w-full bg-[#071A2B] text-slate-100 rounded-2xl border border-[#29B6D8]/30 shadow-2xl p-4 sm:p-6 overflow-hidden">
+    <div className="w-full bg-[#071A2B] text-slate-100 rounded-2xl border border-[#29B6D8]/30 shadow-2xl p-4 sm:p-6 overflow-hidden card-interactive">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#0B2942]">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-[#29B6D8]/20 text-[#29B6D8] border border-[#29B6D8]/30">
+          <div className="p-2 rounded-lg bg-[#29B6D8]/20 text-[#29B6D8] border border-[#29B6D8]/30 card-icon">
             <Stethoscope className="w-5 h-5" />
           </div>
           <div>
@@ -50,7 +47,9 @@ export default function HmsDashboardMockup() {
             <span>Daily OPD Visits</span>
             <Users className="w-3.5 h-3.5 text-[#29B6D8]" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">412</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={412} staggerMs={0} />
+          </div>
           <div className="text-[10px] text-[#21B573] mt-1 flex items-center gap-1">
             <TrendingUp className="w-3 h-3" /> +8% vs avg
           </div>
@@ -61,7 +60,9 @@ export default function HmsDashboardMockup() {
             <span>Admitted IPD</span>
             <Bed className="w-3.5 h-3.5 text-indigo-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">184 Patients</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={184} suffix=" Patients" staggerMs={80} />
+          </div>
           <div className="text-[10px] text-slate-400 mt-1">Bed Occupancy: 84%</div>
         </div>
 
@@ -70,7 +71,9 @@ export default function HmsDashboardMockup() {
             <span>ER Emergency Cases</span>
             <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-rose-400">9 Active</div>
+          <div className="text-xl font-bold font-mono text-rose-400">
+            <AnimatedCounter end={9} suffix=" Active" staggerMs={160} />
+          </div>
           <div className="text-[10px] text-rose-400 mt-1">Triage Priority 1</div>
         </div>
 
@@ -79,14 +82,15 @@ export default function HmsDashboardMockup() {
             <span>Pending Lab Tests</span>
             <FileText className="w-3.5 h-3.5 text-amber-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-amber-400">27 Urgent</div>
+          <div className="text-xl font-bold font-mono text-amber-400">
+            <AnimatedCounter end={27} suffix=" Urgent" staggerMs={240} />
+          </div>
           <div className="text-[10px] text-slate-400 mt-1">LIS & RIS Syncing</div>
         </div>
       </div>
 
-      {/* Main Grid Layout: Live Wards + Pharmacy & Revenue */}
+      {/* Matrix */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {/* Wards & Beds Stream */}
         <div className="lg:col-span-2 bg-[#0B2942]/40 rounded-xl border border-[#176BCE]/20 p-4">
           <div className="flex items-center justify-between mb-3">
             <h4 className="font-semibold text-xs text-white uppercase tracking-wider">
@@ -128,43 +132,9 @@ export default function HmsDashboardMockup() {
                 <div className="bg-[#21B573] h-full w-[100%]" />
               </div>
             </div>
-
-            <div className="bg-[#071A2B] p-3 rounded-lg border border-[#176BCE]/20">
-              <div className="text-[11px] text-slate-400 mb-1">Pediatric Ward</div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-lg font-bold font-mono text-white">14 / 25</span>
-                <span className="text-[10px] text-[#21B573] font-medium">56% Full</span>
-              </div>
-              <div className="w-full bg-[#0B2942] h-1.5 rounded-full mt-2">
-                <div className="bg-[#21B573] h-full w-[56%]" />
-              </div>
-            </div>
-
-            <div className="bg-[#071A2B] p-3 rounded-lg border border-[#176BCE]/20">
-              <div className="text-[11px] text-slate-400 mb-1">Emergency ER</div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-lg font-bold font-mono text-white">9 / 12</span>
-                <span className="text-[10px] text-amber-400 font-medium">75% Full</span>
-              </div>
-              <div className="w-full bg-[#0B2942] h-1.5 rounded-full mt-2">
-                <div className="bg-amber-400 h-full w-[75%]" />
-              </div>
-            </div>
-
-            <div className="bg-[#071A2B] p-3 rounded-lg border border-[#176BCE]/20">
-              <div className="text-[11px] text-slate-400 mb-1">General Ward</div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-lg font-bold font-mono text-white">107 / 120</span>
-                <span className="text-[10px] text-[#29B6D8] font-medium">89% Full</span>
-              </div>
-              <div className="w-full bg-[#0B2942] h-1.5 rounded-full mt-2">
-                <div className="bg-[#29B6D8] h-full w-[89%]" />
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Pharmacy Alerts & EMR Compliance */}
         <div className="bg-[#0B2942]/40 rounded-xl border border-[#176BCE]/20 p-4 space-y-4">
           <h4 className="font-semibold text-xs text-white uppercase tracking-wider flex items-center justify-between">
             <span>Pharmacy & Inventory Stream</span>
@@ -181,28 +151,6 @@ export default function HmsDashboardMockup() {
                 </div>
               </div>
               <span className="text-[10px] text-amber-400 font-mono">Alert Sent</span>
-            </div>
-
-            <div className="flex items-center justify-between p-2 rounded bg-[#071A2B] border border-[#176BCE]/20">
-              <div className="flex items-center gap-2">
-                <Pill className="w-4 h-4 text-[#29B6D8] shrink-0" />
-                <div>
-                  <div className="font-semibold text-white">Amoxicillin 500mg</div>
-                  <div className="text-[10px] text-slate-400">Normal Stock (480 Units)</div>
-                </div>
-              </div>
-              <span className="text-[10px] text-[#21B573] font-mono">OK</span>
-            </div>
-
-            <div className="flex items-center justify-between p-2 rounded bg-[#071A2B] border border-[#176BCE]/20">
-              <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4 text-[#21B573] shrink-0" />
-                <div>
-                  <div className="font-semibold text-white">TPA Insurance Claims</div>
-                  <div className="text-[10px] text-slate-400">42 Claims Processed Today</div>
-                </div>
-              </div>
-              <span className="text-[10px] text-[#21B573] font-mono">Auto-Clear</span>
             </div>
           </div>
         </div>

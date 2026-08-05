@@ -1,19 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroBackground from "@/components/hero/HeroBackground";
 import HmsDashboardMockup from "@/components/dashboards/HmsDashboardMockup";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import {
   Stethoscope,
   CheckCircle2,
-  Users,
-  Bed,
-  FileText,
-  Pill,
-  ShieldCheck,
-  Activity,
-  Heart,
-  Calendar,
+  ArrowRight,
 } from "lucide-react";
 
 export const metadata = {
@@ -49,32 +43,47 @@ export default function HospitalManagementPage() {
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
       <Header />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-16">
         {/* Hero */}
-        <section className="bg-[#071A2B] text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2942] border border-[#29B6D8]/40 text-[#29B6D8] text-xs font-semibold mb-4">
-                <Stethoscope className="w-4 h-4" /> Healthcare Technology Division
-              </div>
-              <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading leading-tight">
+        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+          <HeroBackground variant="hms" />
+
+          <span className="corner-tick-tl">+</span>
+          <span className="corner-tick-tr">+</span>
+          <span className="corner-tick-bl">+</span>
+          <span className="corner-tick-br">+</span>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2942]/90 border border-[#29B6D8]/40 text-[#29B6D8] text-xs font-semibold">
+              <Stethoscope className="w-4 h-4" /> Healthcare Technology Division
+            </div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
+            <div className="lg:col-span-8">
+              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
                 Integrated Hospital Management System
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
+            </div>
+
+            <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
+              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
                 Connect clinical, administrative, operational, and financial hospital processes into one secure, scalable, HIPAA-aligned digital healthcare platform.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+
+              <div className="flex items-center gap-3">
                 <Link
                   href="#contact"
-                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#176BCE] to-[#29B6D8] text-white text-xs font-bold shadow-lg"
+                  className="btn-primary-tech px-6 py-3.5 rounded-lg text-xs font-bold shadow-lg flex-1 text-center"
                 >
                   Schedule Hospital Demo
                 </Link>
                 <Link
                   href="#journey"
-                  className="px-6 py-3 rounded-lg bg-[#0B2942] text-slate-200 text-xs font-semibold border border-[#29B6D8]/30"
+                  className="btn-icon-square"
+                  aria-label="View Patient Journey"
                 >
-                  View Patient Journey
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -101,7 +110,7 @@ export default function HospitalManagementPage() {
               ].map((step) => (
                 <div
                   key={step}
-                  className="p-2.5 bg-white rounded-lg border border-[#DCE4EC] font-semibold text-[#071A2B] shadow-sm"
+                  className="p-2.5 bg-white rounded-lg card-interactive font-semibold text-[#071A2B]"
                 >
                   {step}
                 </div>
@@ -139,7 +148,7 @@ export default function HospitalManagementPage() {
               {hmsModules.map((m) => (
                 <div
                   key={m.name}
-                  className="bg-white p-5 rounded-xl border border-[#DCE4EC] shadow-sm hover:border-[#29B6D8] transition-colors"
+                  className="bg-white p-5 rounded-xl card-interactive"
                 >
                   <span className="text-[10px] uppercase tracking-wider font-bold text-[#29B6D8] block mb-1">
                     {m.category}

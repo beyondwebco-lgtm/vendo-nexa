@@ -6,22 +6,18 @@ import {
   Lock,
   Terminal,
   Activity,
-  AlertOctagon,
-  Eye,
   CheckCircle2,
-  Zap,
-  Server,
-  Cloud,
-  Code2,
+  Eye,
 } from "lucide-react";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function SecurityDashboardMockup() {
   return (
-    <div className="w-full bg-[#051320] text-slate-100 rounded-2xl border border-[#21B573]/40 shadow-2xl p-4 sm:p-6 overflow-hidden security-glow">
+    <div className="w-full bg-[#051320] text-slate-100 rounded-2xl border border-[#21B573]/40 shadow-2xl p-4 sm:p-6 overflow-hidden security-glow card-interactive">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#0B2942]">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-[#21B573]/20 text-[#21B573] border border-[#21B573]/40">
+          <div className="p-2 rounded-lg bg-[#21B573]/20 text-[#21B573] border border-[#21B573]/40 card-icon">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
@@ -58,7 +54,9 @@ export default function SecurityDashboardMockup() {
             <span>VAPT Scan Cycle</span>
             <CheckCircle2 className="w-3.5 h-3.5 text-[#29B6D8]" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">Pass (100%)</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={100} suffix="%" staggerMs={80} />
+          </div>
           <div className="text-[10px] text-[#29B6D8] mt-1">Web, API & Cloud Retested</div>
         </div>
 
@@ -67,7 +65,9 @@ export default function SecurityDashboardMockup() {
             <span>SIEM Events / Sec</span>
             <Activity className="w-3.5 h-3.5 text-indigo-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">4,820 EPS</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={4820} suffix=" EPS" staggerMs={160} />
+          </div>
           <div className="text-[10px] text-slate-400 mt-1">Correlated in Realtime</div>
         </div>
 
@@ -81,9 +81,8 @@ export default function SecurityDashboardMockup() {
         </div>
       </div>
 
-      {/* Main Grid: Terminal Console + Vulnerability Distribution */}
+      {/* Terminal Console */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {/* Terminal SIEM Console */}
         <div className="lg:col-span-2 bg-[#030B12] rounded-xl border border-[#21B573]/30 p-4 font-mono text-xs">
           <div className="flex items-center justify-between pb-2 mb-3 border-b border-[#0B2942] text-slate-400 text-[11px]">
             <div className="flex items-center gap-2">
@@ -106,14 +105,9 @@ export default function SecurityDashboardMockup() {
               <span className="text-slate-500">[2026-08-05 20:41:06]</span>{" "}
               <span className="text-indigo-400">[EMR-VAULT]</span> AES-256 GCM payload decryption verified. Zero policy breach.
             </div>
-            <div className="text-slate-400">
-              <span className="text-slate-500">[2026-08-05 20:41:08]</span>{" "}
-              <span className="text-[#21B573]">[VAPT-SUITE]</span> Dynamic Application Scan (DAST) completed: 0 Critical / 0 High.
-            </div>
           </div>
         </div>
 
-        {/* Vulnerability Severity Matrix */}
         <div className="bg-[#071A2B] rounded-xl border border-[#21B573]/20 p-4 space-y-4">
           <h4 className="font-semibold text-xs text-white uppercase tracking-wider flex items-center justify-between">
             <span>Vulnerability Remediation</span>
@@ -130,31 +124,6 @@ export default function SecurityDashboardMockup() {
                 <div className="bg-[#21B573] h-full w-full" />
               </div>
             </div>
-
-            <div>
-              <div className="flex justify-between text-slate-300 mb-1">
-                <span>High Severity</span>
-                <span className="font-mono text-[#21B573] font-bold">0 Remainder</span>
-              </div>
-              <div className="w-full bg-[#030B12] h-2 rounded-full overflow-hidden">
-                <div className="bg-[#21B573] h-full w-full" />
-              </div>
-            </div>
-
-            <div>
-              <div className="flex justify-between text-slate-300 mb-1">
-                <span>Medium / Low Severity</span>
-                <span className="font-mono text-[#29B6D8] font-bold">2 Remediated</span>
-              </div>
-              <div className="w-full bg-[#030B12] h-2 rounded-full overflow-hidden">
-                <div className="bg-[#29B6D8] h-full w-[95%]" />
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-2 border-t border-[#0B2942] flex items-center justify-between text-[11px]">
-            <span className="text-slate-400">Security Architecture Review</span>
-            <span className="text-[#21B573] font-mono">Approved</span>
           </div>
         </div>
       </div>

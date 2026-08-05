@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroBackground from "@/components/hero/HeroBackground";
 import ContactForm from "@/components/ContactForm";
-import { CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Implementation Process | 9-Step Delivery Framework | Vendonexa",
@@ -26,29 +28,58 @@ export default function ImplementationPage() {
     <div className="min-h-screen bg-white text-[#101820] flex flex-col font-sans">
       <Header />
 
-      <main className="flex-grow pt-20">
-        <section className="bg-[#071A2B] text-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl">
-              <span className="text-xs uppercase font-bold text-[#29B6D8] tracking-widest block mb-2 font-mono">
-                Enterprise Methodology
-              </span>
-              <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading leading-tight">
+      <main className="flex-grow pt-16">
+        <section className="relative min-h-[85vh] bg-[#071A2B] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+          <HeroBackground variant="default" />
+
+          <span className="corner-tick-tl">+</span>
+          <span className="corner-tick-tr">+</span>
+          <span className="corner-tick-bl">+</span>
+          <span className="corner-tick-br">+</span>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
+            <span className="text-xs uppercase font-bold text-[#29B6D8] tracking-widest block font-mono">
+              Enterprise Methodology
+            </span>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
+            <div className="lg:col-span-8">
+              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
                 From Business Requirement to Secure Deployment
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
+            </div>
+
+            <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
+              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
                 Our proven 9-step implementation process ensures on-time project delivery, zero operational disruption, and rigorous cybersecurity validation at every phase.
               </p>
+
+              <div className="flex items-center gap-3">
+                <Link
+                  href="#roadmap"
+                  className="btn-primary-tech px-6 py-3.5 rounded-lg text-xs font-bold shadow-lg flex-1 text-center"
+                >
+                  View 9-Step Roadmap
+                </Link>
+                <Link
+                  href="#roadmap"
+                  className="btn-icon-square"
+                  aria-label="View 9-Step Roadmap"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Desktop Process Roadmap */}
-        <section className="py-20 bg-[#F5F7FA] px-4 sm:px-6 lg:px-8">
+        {/* Roadmap */}
+        <section id="roadmap" className="py-20 bg-[#F5F7FA] px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {implementationSteps.map((s) => (
-                <div key={s.step} className="bg-white p-6 rounded-2xl border border-[#DCE4EC] shadow-sm flex flex-col justify-between">
+                <div key={s.step} className="bg-white p-6 rounded-2xl card-interactive flex flex-col justify-between">
                   <div>
                     <span className="font-mono font-extrabold text-2xl text-[#176BCE] block mb-2">
                       STEP {s.step}

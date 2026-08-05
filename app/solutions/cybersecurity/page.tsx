@@ -1,19 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroBackground from "@/components/hero/HeroBackground";
 import SecurityDashboardMockup from "@/components/dashboards/SecurityDashboardMockup";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import {
   ShieldCheck,
-  Lock,
-  Terminal,
-  Eye,
   CheckCircle2,
-  AlertTriangle,
-  Server,
-  Cloud,
-  FileText,
-  Zap,
+  ArrowRight,
 } from "lucide-react";
 
 export const metadata = {
@@ -71,32 +65,53 @@ export default function CybersecurityPage() {
     <div className="min-h-screen bg-[#051320] text-slate-100 flex flex-col font-sans">
       <Header />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-16">
         {/* Dark Hero */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-[#071A2B] to-[#051320]">
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#21B573]/20 border border-[#21B573]/40 text-[#21B573] text-xs font-semibold mb-4">
-                <ShieldCheck className="w-4 h-4" /> Cybersecurity Division
-              </div>
-              <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading leading-tight text-white">
+        <section className="relative min-h-[85vh] bg-[#051320] text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-between overflow-hidden corner-ticks">
+          <HeroBackground variant="cybersecurity" />
+
+          <span className="corner-tick-tl">+</span>
+          <span className="corner-tick-tr">+</span>
+          <span className="corner-tick-bl">+</span>
+          <span className="corner-tick-br">+</span>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full pt-4 flex items-center justify-between">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071A2B]/90 border border-[#21B573]/40 text-[#21B573] text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4" /> Cybersecurity Division
+            </div>
+
+            {/* Live Security Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071A2B]/90 border border-[#21B573]/30 text-[11px] text-[#21B573] font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#21B573] animate-ping" />
+              Systems Monitored
+            </div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-8">
+            <div className="lg:col-span-8">
+              <h1 className="font-display-hero text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight text-white max-w-2xl">
                 Enterprise Cybersecurity & VAPT Services
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
+            </div>
+
+            <div className="lg:col-span-4 max-w-[380px] lg:ml-auto space-y-6">
+              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed font-sans">
                 Identify vulnerabilities, reduce cyber risk, strengthen controls, monitor threats, and build a resilient zero-trust digital infrastructure.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+
+              <div className="flex items-center gap-3">
                 <Link
                   href="#contact"
-                  className="px-6 py-3 rounded-lg bg-[#21B573] text-slate-950 font-bold text-xs hover:bg-[#21B573]/80 transition-colors shadow-lg shadow-[#21B573]/20"
+                  className="btn-primary-cyan px-6 py-3.5 rounded-lg text-xs font-bold shadow-lg flex-1 text-center"
                 >
                   Request Security Audit
                 </Link>
                 <Link
                   href="#workflow"
-                  className="px-6 py-3 rounded-lg bg-[#071A2B] text-slate-200 text-xs font-semibold border border-[#21B573]/30"
+                  className="btn-icon-square"
+                  aria-label="View Assessment Workflow"
                 >
-                  View Assessment Workflow
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -122,7 +137,7 @@ export default function CybersecurityPage() {
               ].map((step) => (
                 <div
                   key={step}
-                  className="p-3 bg-[#0B2942] rounded-xl border border-[#21B573]/30 text-[#21B573] font-semibold"
+                  className="p-3 bg-[#0B2942] rounded-xl border border-[#21B573]/30 text-[#21B573] font-semibold card-interactive"
                 >
                   {step}
                 </div>
@@ -160,7 +175,7 @@ export default function CybersecurityPage() {
               {cybersecurityCategories.map((cat) => (
                 <div
                   key={cat.title}
-                  className="bg-[#0B2942]/60 p-6 rounded-2xl border border-[#21B573]/30 shadow-xl"
+                  className="bg-[#0B2942]/60 p-6 rounded-2xl border border-[#21B573]/30 card-interactive"
                 >
                   <h3 className="text-sm font-bold text-[#21B573] uppercase tracking-wider font-heading mb-4">
                     {cat.title}

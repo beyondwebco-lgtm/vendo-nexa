@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Archivo, Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  variable: "--font-archivo-display",
+  subsets: ["latin"],
+  weight: ["800", "900"],
+});
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -80,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} ${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
         <script

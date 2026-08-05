@@ -3,25 +3,23 @@
 
 import {
   Building2,
-  CheckCircle2,
   Clock,
   AlertTriangle,
-  FileCheck,
-  TrendingUp,
   Search,
   Filter,
-  ArrowUpRight,
+  TrendingUp,
   ShieldCheck,
   UserCheck,
 } from "lucide-react";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function VmsDashboardMockup() {
   return (
-    <div className="w-full bg-[#071A2B] text-slate-100 rounded-2xl border border-[#176BCE]/30 shadow-2xl p-4 sm:p-6 overflow-hidden">
+    <div className="w-full bg-[#071A2B] text-slate-100 rounded-2xl border border-[#176BCE]/30 shadow-2xl p-4 sm:p-6 overflow-hidden card-interactive">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#0B2942]">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-[#176BCE]/20 text-[#29B6D8] border border-[#176BCE]/30">
+          <div className="p-2 rounded-lg bg-[#176BCE]/20 text-[#29B6D8] border border-[#176BCE]/30 card-icon">
             <Building2 className="w-5 h-5" />
           </div>
           <div>
@@ -57,7 +55,9 @@ export default function VmsDashboardMockup() {
             <span>Total Registered</span>
             <Building2 className="w-3.5 h-3.5 text-[#29B6D8]" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">1,482</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={1482} staggerMs={0} />
+          </div>
           <div className="text-[10px] text-[#21B573] mt-1 flex items-center gap-1">
             <TrendingUp className="w-3 h-3" /> +12 this month
           </div>
@@ -68,7 +68,9 @@ export default function VmsDashboardMockup() {
             <span>Active Vendors</span>
             <UserCheck className="w-3.5 h-3.5 text-[#21B573]" />
           </div>
-          <div className="text-xl font-bold font-mono text-white">1,340</div>
+          <div className="text-xl font-bold font-mono text-white">
+            <AnimatedCounter end={1340} staggerMs={80} />
+          </div>
           <div className="text-[10px] text-slate-400 mt-1">90.4% Active Ratio</div>
         </div>
 
@@ -77,7 +79,9 @@ export default function VmsDashboardMockup() {
             <span>Pending Approvals</span>
             <Clock className="w-3.5 h-3.5 text-amber-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-amber-400">14</div>
+          <div className="text-xl font-bold font-mono text-amber-400">
+            <AnimatedCounter end={14} staggerMs={160} />
+          </div>
           <div className="text-[10px] text-slate-400 mt-1">SLA: &lt; 24h turn</div>
         </div>
 
@@ -86,12 +90,14 @@ export default function VmsDashboardMockup() {
             <span>High-Risk Flagged</span>
             <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
           </div>
-          <div className="text-xl font-bold font-mono text-rose-400">3</div>
+          <div className="text-xl font-bold font-mono text-rose-400">
+            <AnimatedCounter end={3} staggerMs={240} />
+          </div>
           <div className="text-[10px] text-rose-400 mt-1">Requires audit review</div>
         </div>
       </div>
 
-      {/* Main Content Grid: Table + Risk Status */}
+      {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Table */}
         <div className="lg:col-span-2 bg-[#0B2942]/40 rounded-xl border border-[#176BCE]/20 p-4">
@@ -147,23 +153,12 @@ export default function VmsDashboardMockup() {
                   <td className="py-2.5 text-slate-300">Exp. 09/2026</td>
                   <td className="py-2.5 text-right font-medium text-amber-400">Review</td>
                 </tr>
-                <tr>
-                  <td className="py-2.5 font-medium text-white">Quantum Cloud Networks</td>
-                  <td className="py-2.5 text-slate-300">Cloud Services</td>
-                  <td className="py-2.5">
-                    <span className="text-[#21B573] bg-[#21B573]/10 px-2 py-0.5 rounded text-[10px] font-mono">
-                      Verified
-                    </span>
-                  </td>
-                  <td className="py-2.5 text-slate-300">Exp. 02/2028</td>
-                  <td className="py-2.5 text-right font-medium text-[#21B573]">Active</td>
-                </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        {/* Risk & KPI Breakdown Panel */}
+        {/* Performance */}
         <div className="bg-[#0B2942]/40 rounded-xl border border-[#176BCE]/20 p-4 space-y-4">
           <h4 className="font-semibold text-xs text-white uppercase tracking-wider flex items-center justify-between">
             <span>Vendor Performance KPIs</span>
@@ -188,21 +183,6 @@ export default function VmsDashboardMockup() {
             <div className="w-full bg-[#071A2B] h-2 rounded-full overflow-hidden">
               <div className="bg-[#29B6D8] h-full w-[98.2%]" />
             </div>
-          </div>
-
-          <div>
-            <div className="flex justify-between text-xs mb-1">
-              <span className="text-slate-300">Invoice Reconciliation Rate</span>
-              <span className="font-mono text-white font-bold">99.1%</span>
-            </div>
-            <div className="w-full bg-[#071A2B] h-2 rounded-full overflow-hidden">
-              <div className="bg-[#176BCE] h-full w-[99.1%]" />
-            </div>
-          </div>
-
-          <div className="pt-2 border-t border-[#176BCE]/20 flex items-center justify-between text-[11px]">
-            <span className="text-slate-400">Automated Payment Gateway</span>
-            <span className="text-[#21B573] font-mono">Sync Active</span>
           </div>
         </div>
       </div>
