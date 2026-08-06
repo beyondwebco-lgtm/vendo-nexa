@@ -1,9 +1,11 @@
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import HeroBackground from "@/components/hero/HeroBackground";
-import FounderSection from "@/components/FounderSection";
 import Link from "next/link";
 import { ShieldCheck, Building2, Stethoscope, ArrowRight } from "lucide-react";
+
+const FounderSection = dynamic(() => import("@/components/FounderSection"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export const metadata = {
   title: "About Vendonexa | Enterprise Software & Cybersecurity Company",

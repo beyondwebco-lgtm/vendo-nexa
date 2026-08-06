@@ -1,15 +1,18 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import HeroBackground from "@/components/hero/HeroBackground";
 import EcosystemVisual from "@/components/hero/EcosystemVisual";
-import VmsDashboardMockup from "@/components/dashboards/VmsDashboardMockup";
-import HmsDashboardMockup from "@/components/dashboards/HmsDashboardMockup";
-import SecurityDashboardMockup from "@/components/dashboards/SecurityDashboardMockup";
-import IntegrationHubVisual from "@/components/visuals/IntegrationHubVisual";
-import IndustrySelector from "@/components/visuals/IndustrySelector";
-import ContactForm from "@/components/ContactForm";
-import FounderSection from "@/components/FounderSection";
+
+// Below-the-fold components dynamically imported for code splitting & minimal initial JS bundle
+const VmsDashboardMockup = dynamic(() => import("@/components/dashboards/VmsDashboardMockup"));
+const HmsDashboardMockup = dynamic(() => import("@/components/dashboards/HmsDashboardMockup"));
+const SecurityDashboardMockup = dynamic(() => import("@/components/dashboards/SecurityDashboardMockup"));
+const IntegrationHubVisual = dynamic(() => import("@/components/visuals/IntegrationHubVisual"));
+const IndustrySelector = dynamic(() => import("@/components/visuals/IndustrySelector"));
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
+const FounderSection = dynamic(() => import("@/components/FounderSection"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 import {
   ShieldCheck,
