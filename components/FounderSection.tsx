@@ -24,7 +24,7 @@ export default function FounderSection() {
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full p-1.5 bg-gradient-to-tr from-[#071A2B] via-[#176BCE] to-[#29B6D8] shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]">
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-white bg-slate-900 relative">
                   <Image
-                    src="/images/founder.png"
+                    src="/images/founder.jpeg"
                     alt="Sharath Simha Reddy - Founder & CEO, VendoNexa"
                     fill
                     unoptimized
