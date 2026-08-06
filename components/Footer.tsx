@@ -199,11 +199,15 @@ export default function Footer() {
             <ul className="space-y-3 text-xs text-[#A3A3A0]">
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                <span>contact@vendonexa.com</span>
+                <a href="mailto:hr@vendonexa.com" className="hover:text-white transition-colors">
+                  hr@vendonexa.com
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                <span>+1 (800) 555-VENDO</span>
+                <a href="tel:+919502892082" className="hover:text-white transition-colors">
+                  +91 9502892082
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />

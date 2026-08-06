@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroBackground from "@/components/hero/HeroBackground";
+import FounderSection from "@/components/FounderSection";
 import Link from "next/link";
 import { ShieldCheck, Building2, Stethoscope, ArrowRight } from "lucide-react";
 
@@ -115,6 +116,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Founder Section */}
+        <FounderSection />
 
         {/* Three Solution Ecosystem */}
         <section className="py-20 bg-white px-4 sm:px-6 lg:px-8">

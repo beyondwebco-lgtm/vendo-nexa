@@ -101,7 +101,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="font-semibold text-[#071A2B] block">Email Us</span>
-                    <span className="text-[#5C6875]">contact@vendonexa.com</span>
+                    <a href="mailto:hr@vendonexa.com" className="text-[#5C6875] hover:text-[#176BCE] transition-colors">
+                      hr@vendonexa.com
+                    </a>
                   </div>
                 </div>
 
@@ -111,7 +113,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="font-semibold text-[#071A2B] block">Call Us</span>
-                    <span className="text-[#5C6875]">+1 (800) 555-VENDO</span>
+                    <a href="tel:+919502892082" className="text-[#5C6875] hover:text-[#176BCE] transition-colors">
+                      +91 9502892082
+                    </a>
                   </div>
                 </div>
 

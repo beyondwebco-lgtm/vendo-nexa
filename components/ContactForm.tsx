@@ -151,7 +151,7 @@ export default function ContactForm({ defaultSolution = "" }: { defaultSolution?
                   <input
                     type="tel"
                     {...register("phoneNumber", { required: "Phone number is required" })}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 9502892082"
                     className="w-full bg-[#1A1A18] border border-[#2E2E2B] rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-[#A3A3A0]/60 focus:outline-none focus:border-white"
                   />
                 </div>

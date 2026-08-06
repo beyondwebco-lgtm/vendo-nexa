@@ -72,9 +72,9 @@ const jsonLd = {
   slogan: "Manage Smarter. Operate Better. Stay Secure.",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-800-555-8363",
+    telephone: "+91-9502892082",
     contactType: "customer support",
-    email: "contact@vendonexa.com",
+    email: "hr@vendonexa.com",
   },
 };
 
