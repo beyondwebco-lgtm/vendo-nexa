@@ -9,6 +9,7 @@ import SecurityDashboardMockup from "@/components/dashboards/SecurityDashboardMo
 import IntegrationHubVisual from "@/components/visuals/IntegrationHubVisual";
 import IndustrySelector from "@/components/visuals/IndustrySelector";
 import ContactForm from "@/components/ContactForm";
+import FounderSection from "@/components/FounderSection";
 
 import {
   ShieldCheck,
@@ -646,6 +647,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* =========================================================================
+            SECTION 13.5: A WORD FROM OUR FOUNDER
+           ========================================================================= */}
+        <FounderSection />
 
         {/* =========================================================================
             SECTION 14: CONTACT CTA FORM

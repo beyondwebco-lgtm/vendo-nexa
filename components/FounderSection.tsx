@@ -27,6 +27,7 @@ export default function FounderSection() {
                     src="/images/founder.png"
                     alt="Sharath Simha Reddy - Founder & CEO, VendoNexa"
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
                     priority
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
